@@ -1,20 +1,19 @@
 import random
 
 while True:
+
     def rules(answer: str) -> None:
         while True:
             if answer == "да":
                 print(
                     """\nВам нужно угадать слово, указанное в загадке. Вы должны выбрать букву, которая есть в слове. 
-Если вы ошибаетесь, то рисуется висельник. Завершите игру до того, как нарисуется висельник!
-Игра началась!"""
+Если вы ошибаетесь, то рисуется висельник. Завершите игру до того, как нарисуется висельник!"""
                 )
                 break
             elif answer == "yes":
                 print(
                     """\nYou need to guess the word specified in the riddle. You have to choose the letter that is 
-in the word. If you are wrong, then a gallows is drawn. Finish the game before the gallows are drawn! 
-The game has started! """
+in the word. If you are wrong, then a gallows is drawn. Finish the game before the gallows are drawn! """
                 )
                 break
             elif answer == "нет":
@@ -30,7 +29,6 @@ The game has started! """
                 else:
                     print("\nВведенные данные некорректны!")
                     answer = input().lower().strip()
-
 
     def level(level_answer: str) -> dict:
         while True:
@@ -53,7 +51,6 @@ The game has started! """
             else:
                 print("\nВведенные данные некорректны!/The data entered is incorrect!")
                 level_answer = input().strip().lower()
-
 
     picture_of_man = (
         """
@@ -237,7 +234,7 @@ The game has started! """
             "теннис",
             "бейсбол",
             "бильярд",
-        )
+        ),
     }
     English_dictionary_easy = {
         "furniture": (
@@ -339,7 +336,7 @@ The game has started! """
             "peach",
             "apricot",
             "pear",
-        )
+        ),
     }
     Russian_dictionary_hard = {
         "физика": (
@@ -397,7 +394,6 @@ The game has started! """
             "ваканда",
             "камерун",
         ),
-
     }
     English_dictionary_hard = {
         "physics": (
@@ -442,8 +438,9 @@ The game has started! """
             "leprosy",
             "typhus",
             "flu",
-        )
+        ),
     }
+
     topic = ""
     word = ""
     print("Your language/Ваш язык: 1) English 2) Русский")
@@ -462,7 +459,7 @@ The game has started! """
             rules(answer)
             break
         else:
-            print("Неккоректный ввод!/Wrong input!")
+            print("\nНеккоректный ввод!/Wrong input!")
             answer_language = input().strip().lower()
 
     if answer_language == "2":
@@ -508,7 +505,8 @@ The game has started! """
                 print("\nНеверный ввод!")
             else:
                 print("\nWrong input!")
-            answer_game_mode = int(input().strip())
+            answer_game_mode = input().strip().lower()
+
     length_of_word = "_" * len(word)
     wrong = 0
     used_letter = []
@@ -553,7 +551,8 @@ The game has started! """
             print("\nУ тебя получилось!\n＼(￣▽￣)／")
         else:
             print("\nYou've won!\n＼(￣▽￣)／")
-    print(f"\n{used_letter}\n{word}")
+    print(f"\n{used_letter}\n{word.upper()}")
+
     while True:  # функция restart
         if answer_language == "2":
             print("\nЕще раз? (да/нет): ")
@@ -574,4 +573,3 @@ The game has started! """
         else:
             print("\nThank you for playing!")
         break
-        
