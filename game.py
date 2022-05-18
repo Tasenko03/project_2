@@ -1,3 +1,6 @@
+import random
+
+
 while True:
     def language(answer_language: str) -> str:
         while True:
