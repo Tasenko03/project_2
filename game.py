@@ -129,7 +129,7 @@ The game has started! """
         """,
     )
     max_wrong = len(picture_of_man) - 1
-        Russian_dictionary_easy · {
+        Russian_dictionary_easy = {
         "мебель": (
             "диван",
             "стол",
@@ -241,106 +241,106 @@ The game has started! """
     }
 
     English_dictionary_easy = {
-        "мебель": (
-            "диван",
-            "таблица",
-            "табуретка",
-            "гардероб",
-            "вешалка",
-            "кресло",
-            "кровать",
-            "стул",
-            "книжный шкаф",
+        "furniture": (
+            "sofa",
+            "table",
+            "stool",
+            "wardrobe",
+            "hanger",
+            "armchair",
+            "bed",
+            "chair",
+            "bookcase",
         ),
-        "спорт": (
-            "баскетбол",
-            "футбол",
-            "гимнастика",
-            "хоккей",
-            "шахматы",
-            "теннис",
-            "бейсбол",
-            "бассейн",
+        "sport": (
+            "basketball",
+            "football",
+            "gymnastic",
+            "hockey",
+            "chess",
+            "tennis",
+            "baseball",
+            "pool",
         ),
-        "транспорт": (
-            "велосипед",
-            "самокат",
-            "автомобиль",
-            "автобус",
-            "вертолет",
-            "самолет",
-            "мотоцикл",
+        "transport": (
+            "bike",
+            "scooter",
+            "car",
+            "bus",
+            "helicopter",
+            "plane",
+            "motorcycle",
         ),
-        "овощи": (
-            "огурец",
-            "помидор",
-            "лук",
-            "картофель",
-            "морковь",
-            "капуста",
-            "чеснок",
-            "свекла",
-            "кабачок",
+        "vegetables": (
+            "cucumber",
+            "tomato",
+            "onion",
+            "potato",
+            "carrot",
+            "cabbage",
+            "garlic",
+            "beet",
+            "zucchini",
         ),
-        "еда": (
-            "пицца",
-            "суп",
+        "food": (
+            "pizza",
+            "soup",
             "porrige",
-            "бутерброд",
-            "омлет",
-            "салат",
-            "макароны",
-            "эскимо",
+            "sandwich",
+            "omelette",
+            "salad",
+            "pasta",
+            "popsicle",
         ),
-        "оружие": (
-            "копье",
-            "лук",
-            "пистолет",
-            "меч",
-            "щит",
-            "граната",
-            "ракета",
+        "weapon": (
+            "spear",
+            "bow",
+            "gun",
+            "sword",
+            "shield",
+            "grenade",
+            "missile",
         ),
-        "безалкогольные напитки": (
-            "сок",
-            "чай",
-            "кофе",
-            "какао",
-            "лимонад",
-            "компот",
+        "soft drinks": (
+            "juice",
+            "tea",
+            "coffee",
+            "cocoa",
+            "lemonade",
+            "compote",
         ),
-        "животные": (
-            "собака",
-            "кот",
-            "свинья",
-            "мышь",
-            "жираф",
-            "слон",
-            "тигр",
-            "лев",
-            "волк",
+        "animals": (
+            "dog",
+            "cat",
+            "pig",
+            "mouse",
+            "giraffe",
+            "elephant",
+            "tiger",
+            "lion",
+            "wolf",
         ),
-        "одежда": (
-            "куртка",
-            "брюки",
-            "платье",
-            "рубашка",
-            "юбка",
-            "носки",
-            "свитер",
-            "пальто",
-            "куртка",
+        "clothes": (
+            "jacket",
+            "trousers",
+            "dress",
+            "shirt",
+            "skirt",
+            "socks",
+            "sweater",
+            "coat",
+            "jacket",
         ),
-        "фрукты": (
-            "банан",
-            "оранжевый",
-            "яблоко",
-            "ананас",
-            "мандарин",
-            "киви",
-            "персик",
-            "абрикос",
-            "груша",
+        "fruits": (
+            "banana",
+            "orange",
+            "apple",
+            "pineapple",
+            "tangerine",
+            "kiwi",
+            "peach",
+            "apricot",
+            "pear",
         ),
         )
     }
@@ -370,15 +370,15 @@ The game has started! """
             "вона",
         ),
         "Английские писатели": (
-            "Шекспир",
-            "Стивенсон",
-            "Уальд",
-            "Дойл",
-            "Кэррол",
-            "Байрон",
-            "Толкин",
-            "Роулинг",
-            "Бронте",
+            "шекспир",
+            "стивенсон",
+            "уальд",
+            "дойл",
+            "кэррол",
+            "байрон",
+            "толкин",
+            "роулинг",
+            "бронте",
         ),
         "смертельные болезни": (
             "чума",
@@ -406,48 +406,48 @@ The game has started! """
     }
 
     English_dictionary_hard = {
-        "физика": (
-            "амплитуда",
-            "вакуум",
-            "вольтметр",
-            "дифракция",
-            "изолятор",
-            "интерференция",
-            "конвекция",
-            "конденсация",
-            "радиоактивность",
+        "physics": (
+            "amplitude",
+            "vacuum",
+            "voltmeter",
+            "diffraction",
+            "insulator",
+            "interference",
+            "convection",
+            "condensation",
+            "radioactivity",
         ),
-        "валюта": (
-            "доллар",
-            "рубль",
-            "евро",
-            "гривна",
-            "динар",
-            "франк",
-            "иена",
-            "выиграл",
+        "currency": (
+            "dollar",
+            "ruble",
+            "euro",
+            "hryvnia",
+            "dinar",
+            "franc",
+            "yen",
+            "won",
         ),
-        "Английские писатели": (
-            "шекспир",
-            "стивенсон",
-            "уайльд",
-            "дойл",
-            "кэролл",
-            "байрон",
-            "толкин",
-            "роулинг",
-            "бронте",
+        "English writers": (
+            "shakespeare",
+            "stevenson",
+            "wilde",
+            "doyle",
+            "caroll",
+            "byron",
+            "tolkien",
+            "rowling",
+            "bronte",
         ),
-        "смертельные болезни": (
-            "чума",
-            "оспа",
-            "холера",
-            "эбола",
-            "туберкулез",
-            "малярия",
-            "проказа",
-            "тиф",
-            "грипп",
+        "lethal deseases": (
+            "plague",
+            "smallpox",
+            "cholera",
+            "ebola",
+            "tuberculosis",
+            "malaria",
+            "leprosy",
+            "typhus",
+            "flu",
         )
     }
     topic = ""
@@ -544,15 +544,15 @@ The game has started! """
             wrong += 1
     if wrong == max_wrong:
         if answer_language == "2":
-            print("\nВас повесили")
+            print("\nВас повесили\n\n(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻")
         else:
-            print("\nYou've died")
+            print("\nYou've died\n\n(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻")
         print(picture_of_man[wrong])
     else:
         if answer_language == "2":
-            print("\nУ тебя получилось!")
+            print("\nУ тебя получилось!\n\n＼(٥⁀▽⁀ )／
         else:
-            print("\nYou've won!")
+            print("\nYou've won!\n\n＼(٥⁀▽⁀ )／
     print(f"\n{used_letter}\n{word}")
 
     while True:  # функция restart
