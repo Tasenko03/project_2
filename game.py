@@ -1,6 +1,5 @@
 import random
 
-
 while True:
     def rules(answer: str) -> None:
         while True:
@@ -19,10 +18,10 @@ The game has started! """
                 )
                 break
             elif answer == "нет":
-                print("\nИгра началась!")
+                pass
                 break
             elif answer == "no":
-                print("\nThe game has started!")
+                pass
                 break
             else:
                 if answer_language == "1":
@@ -240,7 +239,6 @@ The game has started! """
             "бильярд",
         )
     }
-    
     English_dictionary_easy = {
         "furniture": (
             "sofa",
@@ -330,7 +328,6 @@ The game has started! """
             "socks",
             "sweater",
             "coat",
-            "jacket",
         ),
         "fruits": (
             "banana",
@@ -344,7 +341,6 @@ The game has started! """
             "pear",
         )
     }
-    
     Russian_dictionary_hard = {
         "физика": (
             "амплитуда",
@@ -401,9 +397,8 @@ The game has started! """
             "ваканда",
             "камерун",
         ),
-    
+
     }
-    
     English_dictionary_hard = {
         "physics": (
             "amplitude",
@@ -452,29 +447,35 @@ The game has started! """
     topic = ""
     word = ""
     print("Your language/Ваш язык: 1) English 2) Русский")
-    answer_language = input("Write the number of the language/Напишите цифру языка: ").strip().lower()
+    answer_language = (
+        input("Write the number of the language/Напишите цифру языка: ").strip().lower()
+    )
     while True:
         if answer_language == "2":
-            print(
-                "\nВыберите режим игры: на двоих игроков или на одного игрока.\nВведите цифру 1, если на "
-                "одного игрока. Введите цифру 2, если на двоих игроков.")
+            print("\nХотите ли Вы ознакомиться с правилами? Да/Нет")
+            answer = input().lower().strip()
+            rules(answer)
             break
         elif answer_language == "1":
-            print(
-                "\nChoose the game mode: for two players or for one player.\nEnter the number 1 if for one "
-                "player.Enter the number 2 if for two players.")
+            print("\nDo you want to read the rules? Yes/No")
+            answer = input().lower().strip()
+            rules(answer)
             break
         else:
             print("Неккоректный ввод!/Wrong input!")
             answer_language = input().strip().lower()
 
-    answer_game_mode = input().strip().lower()
-    if answer_language == "1":
-        print("\nDo you want to read the rules? Yes/No")
+    if answer_language == "2":
+        print(
+            "\nВыберите режим игры: на двоих игроков или на одного игрока.\nВведите цифру 1, если на "
+            "одного игрока. Введите цифру 2, если на двоих игроков."
+        )
     else:
-        print("\nХотите ли Вы ознакомиться с правилами? Да/Нет")
-    answer = input().lower().strip()
-    rules(answer)
+        print(
+            "\nChoose the game mode: for two players or for one player.\nEnter the number 1 if for one "
+            "player.Enter the number 2 if for two players."
+        )
+    answer_game_mode = input().strip().lower()
     while True:
         if answer_game_mode == "2":
             if answer_language == "2":
@@ -493,7 +494,8 @@ The game has started! """
             elif answer_language == "1" and answer_game_mode == "1":
                 print(
                     "\nSelect a difficulty level!\nEnter 1 for Easy level, enter 2 for Complex "
-                    "level: ")
+                    "level: "
+                )
             level_answer = input().strip().lower()
             words1 = level(level_answer)
             topic1 = random.choice(list(words1.keys()))
@@ -507,7 +509,6 @@ The game has started! """
             else:
                 print("\nWrong input!")
             answer_game_mode = int(input().strip())
-
     length_of_word = "_" * len(word)
     wrong = 0
     used_letter = []
@@ -543,17 +544,16 @@ The game has started! """
             wrong += 1
     if wrong == max_wrong:
         if answer_language == "2":
-            print("\nВас повесили\n\n(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻")
+            print("\nВас повесили\n(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻")
         else:
-            print("\nYou've died\n\n(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻")
+            print("\nYou've died\n(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻")
         print(picture_of_man[wrong])
     else:
         if answer_language == "2":
-            print("\nУ тебя получилось!\n\n＼(￣▽￣)／")
+            print("\nУ тебя получилось!\n＼(￣▽￣)／")
         else:
-            print("\nYou've won!\n\n＼(￣▽￣)／")
+            print("\nYou've won!\n＼(￣▽￣)／")
     print(f"\n{used_letter}\n{word}")
-
     while True:  # функция restart
         if answer_language == "2":
             print("\nЕще раз? (да/нет): ")
@@ -574,3 +574,4 @@ The game has started! """
         else:
             print("\nThank you for playing!")
         break
+        
