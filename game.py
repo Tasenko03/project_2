@@ -573,3 +573,4 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
         else:
             print("\nThank you for playing!")
         break
+
