@@ -1,5 +1,6 @@
 import random
 
+
 while True:
     def rules(answer: str) -> None:
         while True:
@@ -129,7 +130,7 @@ The game has started! """
         """,
     )
     max_wrong = len(picture_of_man) - 1
-        Russian_dictionary_easy = {
+    Russian_dictionary_easy = {
         "мебель": (
             "диван",
             "стол",
@@ -239,7 +240,7 @@ The game has started! """
             "бильярд",
         )
     }
-
+    
     English_dictionary_easy = {
         "furniture": (
             "sofa",
@@ -341,10 +342,9 @@ The game has started! """
             "peach",
             "apricot",
             "pear",
-        ),
         )
     }
-
+    
     Russian_dictionary_hard = {
         "физика": (
             "амплитуда",
@@ -356,7 +356,6 @@ The game has started! """
             "конвекция",
             "конденсация",
             "радиоактивность",
-        )
         ),
         "валюта": (
             "доллар",
@@ -402,9 +401,9 @@ The game has started! """
             "ваканда",
             "камерун",
         ),
-
+    
     }
-
+    
     English_dictionary_hard = {
         "physics": (
             "amplitude",
@@ -550,9 +549,9 @@ The game has started! """
         print(picture_of_man[wrong])
     else:
         if answer_language == "2":
-            print("\nУ тебя получилось!\n\n＼(٥⁀▽⁀ )／
+            print("\nУ тебя получилось!\n\n＼(￣▽￣)／")
         else:
-            print("\nYou've won!\n\n＼(٥⁀▽⁀ )／
+            print("\nYou've won!\n\n＼(￣▽￣)／")
     print(f"\n{used_letter}\n{word}")
 
     while True:  # функция restart
