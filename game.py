@@ -2,13 +2,18 @@ import random
 import dictionaries
 
 while True:
+
     def symbol_corrector(input_u):
         while not input_u.isalpha():
             if answer_language == "1":
-                print('Your input contains non-letter symbols. Please, exclude them and try again.')
+                print(
+                    "Your input contains non-letter symbols. Please, exclude them and try again."
+                )
                 input_u = input().strip().lower()
             else:
-                print("Ваш ввод сожержит небуквенные символы. Пожалуйста, введите буквенный символ.")
+                print(
+                    "Ваш ввод сожержит небуквенные символы. Пожалуйста, введите буквенный символ."
+                )
                 input_u = input().strip().lower()
             if input_u.isalpha():
                 return input_u
@@ -64,7 +69,6 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
             else:
                 print("\nВведенные данные некорректны!/The data entered is incorrect!")
                 level_answer = input().strip().lower()
-
 
     with open("hangmanpic.txt", "r") as f:
         picture = f.read()
@@ -155,7 +159,9 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
         corrected_guess = symbol_corrector(guess)
         while corrected_guess in used_letter:
             if answer_language == "2":
-                print(f"\nВы уже вводили букву {corrected_guess}. Введите другую букву:")
+                print(
+                    f"\nВы уже вводили букву {corrected_guess}. Введите другую букву:"
+                )
             else:
                 print(
                     f"\nYou have already entered the letter {corrected_guess}. Please enter a different letter:"
