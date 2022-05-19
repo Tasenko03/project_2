@@ -1,6 +1,19 @@
 import random
+import dictionaries
 
 while True:
+    def symbol_corrector(input_u):
+        while not input_u.isalpha():
+            if answer_language == "1":
+                print('Your input contains non-letter symbols. Please, exclude them and try again.')
+                input_u = input().strip().lower()
+            else:
+                print("Ваш ввод сожержит небуквенные символы. Пожалуйста, введите буквенный символ.")
+                input_u = input().strip().lower()
+            if input_u.isalpha():
+                return input_u
+        else:
+            return input_u
 
     def rules(answer: str) -> None:
         while True:
@@ -33,414 +46,31 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
     def level(level_answer: str) -> dict:
         while True:
             if level_answer == "1" and answer_language == "1":
-                words = English_dictionary_easy
+                words = dictionaries.English_dictionary_easy
                 print("You have chosen an easy level!")
                 return words
             elif level_answer == "2" and answer_language == "1":
-                words = English_dictionary_hard
+                words = dictionaries.English_dictionary_hard
                 print("You have chosen a complex level!")
                 return words
             elif level_answer == "1" and answer_language == "2":
-                words = Russian_dictionary_easy
+                words = dictionaries.Russian_dictionary_easy
                 print("Вы выбрали легкий уровень сложности!")
                 return words
             elif level_answer == "2" and answer_language == "2":
-                words = Russian_dictionary_hard
+                words = dictionaries.Russian_dictionary_hard
                 print("Вы выбрали сложный уровень!")
                 return words
             else:
                 print("\nВведенные данные некорректны!/The data entered is incorrect!")
                 level_answer = input().strip().lower()
 
-    picture_of_man = (
-        """
-        --------
-        |      
-        |
-        |
-        |
-        |
-        ----------
-        """,
-        """
-        --------
-        |      |
-        |   
-        |
-        |
-        |
-        ----------
-        """,
-        """
-        --------
-        |      |
-        |      0
-        |     
-        |     
-        |
-        ----------
-        """,
-        """
-        --------
-        |      |
-        |      0
-        |      X
-        |      
-        |
-        ----------
-        """,
-        """
-        --------
-        |      |
-        |      0
-        |     /X
-        |      
-        |
-        ----------
-        """,
-        """
-        --------
-        |      |
-        |      0
-        |     /X\  
-        |      
-        |
-        ----------
-        """,
-        """
-        --------
-        |      |
-        |      0
-        |     /X\  
-        |     /
-        ----------
-        """,
-        """
-        --------
-        |      |
-        |      0
-        |     /X\ 
-        |     / \ 
-        |
-        ----------
-        """,
-    )
-    max_wrong = len(picture_of_man) - 1
-    Russian_dictionary_easy = {
-        "мебель": (
-            "диван",
-            "стол",
-            "табурет",
-            "шкаф",
-            "вешалка",
-            "кресло",
-            "кровать",
-            "стул",
-        ),
-        "животные": (
-            "собака",
-            "кошка",
-            "свинья",
-            "мышь",
-            "жираф",
-            "слон",
-            "тигр",
-            "лев",
-            "волк",
-        ),
-        "безалкогольные напитки": (
-            "кисель",
-            "сок",
-            "чай",
-            "кофе",
-            "какао",
-            "энергетик",
-            "лимонад",
-            "компот",
-            "кефир",
-        ),
-        "оружие": (
-            "копье",
-            "лук",
-            "автомат",
-            "пулемет",
-            "пистолет",
-            "меч",
-            "щит",
-            "граната",
-            "ракета",
-        ),
-        "одежда": (
-            "кофта",
-            "брюки",
-            "платье",
-            "рубашка",
-            "юбка",
-            "носки",
-            "свитер",
-            "пальто",
-            "куртка",
-        ),
-        "фрукты": (
-            "банан",
-            "апельсин",
-            "яблоко",
-            "ананас",
-            "мандарин",
-            "персик",
-            "абрикос",
-            "груша",
-        ),
-        "овощи": (
-            "огурец",
-            "помидор",
-            "лук",
-            "картофель",
-            "морковь",
-            "капуста",
-            "чеснок",
-            "свекла",
-            "кабачок",
-        ),
-        "еда": (
-            "пицца",
-            "суп",
-            "каша",
-            "бутерброд",
-            "яичница",
-            "омлет",
-            "салат",
-            "макароны",
-            "мороженое",
-        ),
-        "транспорт": (
-            "велосипед",
-            "самокат",
-            "автомобиль",
-            "автобус",
-            "троллейбус",
-            "вертолет",
-            "самолет",
-            "дельтоплан",
-            "мотоцикл",
-        ),
-        "спорт": (
-            "баскетбол",
-            "футбол",
-            "гимнастика",
-            "хоккей",
-            "шахматы",
-            "триатлон",
-            "теннис",
-            "бейсбол",
-            "бильярд",
-        ),
-    }
-    English_dictionary_easy = {
-        "furniture": (
-            "sofa",
-            "table",
-            "stool",
-            "wardrobe",
-            "hanger",
-            "armchair",
-            "bed",
-            "chair",
-            "bookcase",
-        ),
-        "sport": (
-            "basketball",
-            "football",
-            "gymnastic",
-            "hockey",
-            "chess",
-            "tennis",
-            "baseball",
-            "pool",
-        ),
-        "transport": (
-            "bike",
-            "scooter",
-            "car",
-            "bus",
-            "helicopter",
-            "plane",
-            "motorcycle",
-        ),
-        "vegetables": (
-            "cucumber",
-            "tomato",
-            "onion",
-            "potato",
-            "carrot",
-            "cabbage",
-            "garlic",
-            "beet",
-            "zucchini",
-        ),
-        "food": (
-            "pizza",
-            "soup",
-            "porrige",
-            "sandwich",
-            "omelette",
-            "salad",
-            "pasta",
-            "popsicle",
-        ),
-        "weapon": (
-            "spear",
-            "bow",
-            "gun",
-            "sword",
-            "shield",
-            "grenade",
-            "missile",
-        ),
-        "soft drinks": (
-            "juice",
-            "tea",
-            "coffee",
-            "cocoa",
-            "lemonade",
-            "compote",
-        ),
-        "animals": (
-            "dog",
-            "cat",
-            "pig",
-            "mouse",
-            "giraffe",
-            "elephant",
-            "tiger",
-            "lion",
-            "wolf",
-        ),
-        "clothes": (
-            "jacket",
-            "trousers",
-            "dress",
-            "shirt",
-            "skirt",
-            "socks",
-            "sweater",
-            "coat",
-        ),
-        "fruits": (
-            "banana",
-            "orange",
-            "apple",
-            "pineapple",
-            "tangerine",
-            "kiwi",
-            "peach",
-            "apricot",
-            "pear",
-        ),
-    }
-    Russian_dictionary_hard = {
-        "физика": (
-            "амплитуда",
-            "вакуум",
-            "вольтметр",
-            "дифракция",
-            "изолятор",
-            "интерференция",
-            "конвекция",
-            "конденсация",
-            "радиоактивность",
-        ),
-        "валюта": (
-            "доллар",
-            "рубль",
-            "евро",
-            "гривна",
-            "фунт",
-            "динар",
-            "франк",
-            "иена",
-            "вона",
-        ),
-        "Английские писатели": (
-            "шекспир",
-            "стивенсон",
-            "уальд",
-            "дойл",
-            "кэррол",
-            "байрон",
-            "толкин",
-            "роулинг",
-            "бронте",
-        ),
-        "смертельные болезни": (
-            "чума",
-            "оспа",
-            "холера",
-            "эбола",
-            "туберкулез",
-            "малярия",
-            "проказа",
-            "тиф",
-            "грипп",
-        ),
-        "страны Африки": (
-            "египет",
-            "марокко",
-            "мадагаскар",
-            "кения",
-            "эфиопия",
-            "гана",
-            "гвинея",
-            "ваканда",
-            "камерун",
-        ),
-    }
-    English_dictionary_hard = {
-        "physics": (
-            "amplitude",
-            "vacuum",
-            "voltmeter",
-            "diffraction",
-            "insulator",
-            "interference",
-            "convection",
-            "condensation",
-            "radioactivity",
-        ),
-        "currency": (
-            "dollar",
-            "ruble",
-            "euro",
-            "hryvnia",
-            "dinar",
-            "franc",
-            "yen",
-            "won",
-        ),
-        "English writers": (
-            "shakespeare",
-            "stevenson",
-            "wilde",
-            "doyle",
-            "caroll",
-            "byron",
-            "tolkien",
-            "rowling",
-            "bronte",
-        ),
-        "lethal deseases": (
-            "plague",
-            "smallpox",
-            "cholera",
-            "ebola",
-            "tuberculosis",
-            "malaria",
-            "leprosy",
-            "typhus",
-            "flu",
-        ),
-    }
 
+    with open("hangmanpic.txt", "r") as f:
+        picture = f.read()
+        picture_of_man = tuple(picture.split(","))
+
+    max_wrong = len(picture_of_man) - 1
     topic = ""
     word = ""
     print("Your language/Ваш язык: 1) English 2) Русский")
@@ -480,8 +110,9 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
             else:
                 print("\nEnter the word: ")
             word1 = input().lower().strip()
+            word1_correction = symbol_corrector(word1)
             print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-            word += word1
+            word += word1_correction
             break
         elif answer_game_mode == "1":
             if answer_language == "2" and answer_game_mode == "1":
@@ -520,20 +151,22 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
             print("Введите букву: ")
         else:
             print("Enter a letter: ")
-        guess = input().lower()
-        while guess in used_letter:
+        guess = input().lower().strip()
+        corrected_guess = symbol_corrector(guess)
+        while corrected_guess in used_letter:
             if answer_language == "2":
-                print(f"\nВы уже вводили букву {guess}. Введите другую букву:")
+                print(f"\nВы уже вводили букву {corrected_guess}. Введите другую букву:")
             else:
                 print(
-                    f"\nYou have already entered the letter {guess}. Please enter a different letter:"
+                    f"\nYou have already entered the letter {corrected_guess}. Please enter a different letter:"
                 )
-            guess = input().lower()
-        used_letter.append(guess)
-        if guess in word:
+            guess = input().lower().strip()
+            corrected_guess = symbol_corrector(guess)
+        used_letter.append(corrected_guess)
+        if corrected_guess in word:
             new = ""
             for i in range(len(word)):
-                if guess == word[i]:
+                if corrected_guess == word[i]:
                     new += word[i]
                 else:
                     new += length_of_word[i]
@@ -573,4 +206,3 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
         else:
             print("\nThank you for playing!")
         break
-
