@@ -1,8 +1,19 @@
 import random
 import dictionaries
 
-
 while True:
+    def symbol_corrector(input_u):
+        while not input_u.isalpha():
+            if answer_language == "1":
+                print('Your input contains non-letter symbols. Please, exclude them and try again.')
+                input_u = input().strip().lower()
+            else:
+                print("Ваш ввод сожержит небуквенные символы. Пожалуйста, введите буквенный символ.")
+                input_u = input().strip().lower()
+            if input_u.isalpha():
+                return input_u
+        else:
+            return input_u
 
     def rules(answer: str) -> None:
         while True:
@@ -99,8 +110,9 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
             else:
                 print("\nEnter the word: ")
             word1 = input().lower().strip()
+            word1_correction = symbol_corrector(word1)
             print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-            word += word1
+            word += word1_correction
             break
         elif answer_game_mode == "1":
             if answer_language == "2" and answer_game_mode == "1":
@@ -139,20 +151,22 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
             print("Введите букву: ")
         else:
             print("Enter a letter: ")
-        guess = input().lower()
-        while guess in used_letter:
+        guess = input().lower().strip()
+        corrected_guess = symbol_corrector(guess)
+        while corrected_guess in used_letter:
             if answer_language == "2":
-                print(f"\nВы уже вводили букву {guess}. Введите другую букву:")
+                print(f"\nВы уже вводили букву {corrected_guess}. Введите другую букву:")
             else:
                 print(
-                    f"\nYou have already entered the letter {guess}. Please enter a different letter:"
+                    f"\nYou have already entered the letter {corrected_guess}. Please enter a different letter:"
                 )
-            guess = input().lower()
-        used_letter.append(guess)
-        if guess in word:
+            guess = input().lower().strip()
+            corrected_guess = symbol_corrector(guess)
+        used_letter.append(corrected_guess)
+        if corrected_guess in word:
             new = ""
             for i in range(len(word)):
-                if guess == word[i]:
+                if corrected_guess == word[i]:
                     new += word[i]
                 else:
                     new += length_of_word[i]
