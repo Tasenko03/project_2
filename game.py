@@ -85,7 +85,7 @@ in the word. If you are wrong, then a gallows is drawn. Finish the game before t
     max_wrong = len(picture_of_man) - 1
     topic = ""
     word = ""
-    print("Your language/Ваш язык: 1) English 2) Русский")
+    print("\nYour language/Ваш язык: 1) English 2) Русский")
     answer_language = (
         input("Write the number of the language/Напишите цифру языка: ").strip().lower()
     )
