@@ -3,7 +3,7 @@ import dictionaries
 
 while True:
 
-    def symbol_corrector(input_u):
+    def symbol_corrector(input_u) -> str:
         while not input_u.isalpha():
             if answer_language == "1":
                 print(
